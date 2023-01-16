@@ -17,3 +17,8 @@ Those scripts are ubuntu related with major version 18+, for other distributions
 `ansible-playbook tools/ubuntu.yml --ask-become-pass`
 
 Type your password when asked to give root permissions for some actions.
+
+## Links
+
+- [Usando o Ansible para Automatizar minha Workstation - Caio Delgado [Youtube Video]](https://youtu.be/bG2kX7W_s0c)
+- [Ansible Documentation](https://docs.ansible.com/)
