@@ -12,7 +12,7 @@ These scripts are Ubuntu related with major version 18+, for other distributions
 `sudo apt update && sudo apt install ansible unzip git -y`
 
 2. Clone this repository
-`git clone https://github.com/caiodelgadonew/tools.git`
+`git clone https://github.com/luisabfs/workstation.git`
 
 3. Apply the configuration
 `ansible-playbook tools/ubuntu.yml --ask-become-pass`
