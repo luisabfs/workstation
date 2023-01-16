@@ -1,11 +1,12 @@
 # Workstation
 Ansible playbook to ✨automagically✨ install my workstation tools.
 
->Disclaimer:
-Those scripts are ubuntu related with major version 18+, for other distributions you'll need to adapt it
+>_Disclaimer:_  
+These scripts are Ubuntu related with major version 18+, for other distributions you'll need to adapt it.
+
 
 ## Steps
-> Read the pop!_os.yaml file before applying and be sure to understand everything that will be done.
+> Read the ubuntu.yaml file before applying and be sure to understand everything that will be done.
 
 1. Install Ansible
 `sudo apt update && sudo apt install ansible unzip git -y`
