@@ -41,7 +41,7 @@
           regexp: '^ZSH_THEME='
           line: 'ZSH_THEME="powerlevel10k"'
    
-   - block:
+    - block:
       - name: Install Google Key
         become: true
         apt_key: 
@@ -98,7 +98,7 @@
 # OPTIONAL
 
     - block:
-      - name: Adding Peek Repository
+      - name: Add Peek Repository
         become: true
         apt_repository:
           repo: 'ppa:peek-developers/stable'
