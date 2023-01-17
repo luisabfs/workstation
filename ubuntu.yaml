@@ -19,6 +19,27 @@
        - zsh
        - flameshot
        - snapd
+       - apt-transport-https
+       - gcc
+       - g++
+
+    - block:          
+      - name: Install GPG key for Node.js LTS
+        become: true
+        apt_key:
+          url: "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
+          state: present
+      - name: Install Node.js LTS repos
+        become: true
+        apt_repository:
+          repo: "deb http://deb.nodesource.com/node_16.x jammy main"
+          state: present
+          update_cache: yes
+      - name: Install Node.js
+        become: true
+        apt:
+          name: nodejs
+          state: present
     
     - block:
       - name: Verify if oh-my-zsh is installed
