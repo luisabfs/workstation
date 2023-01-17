@@ -35,7 +35,8 @@
         user: 
           name: '{{ ansible_user_id }}'
           shell: /bin/zsh
-      - name: Changing defaukt zsh theme
+      - name: Add zsh theme - powerlevel10k
+      - name: Changing default zsh theme to powerlevel10k
         lineinfile:
           path: /home/{{ ansible_user_id }}/.zshrc
           regexp: '^ZSH_THEME='
@@ -129,6 +130,7 @@
     
     - block:
       - name: Install Spotify
+        become: true
         snap:
           name: spotify
           classic: yes
