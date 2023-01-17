@@ -15,7 +15,7 @@ These scripts are Ubuntu related with major version 18+, for other distributions
 `git clone https://github.com/luisabfs/workstation.git`
 
 3. Apply the configuration
-`ansible-playbook tools/ubuntu.yml --ask-become-pass`
+`ansible-playbook worksation/ubuntu.yaml --ask-become-pass`
 
 Type your password when asked to give root permissions for some actions.
 
