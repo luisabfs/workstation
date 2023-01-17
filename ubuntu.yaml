@@ -40,7 +40,14 @@
         apt:
           name: nodejs
           state: present
-    
+          
+    - block:
+      - name: Install yarn
+        become: true
+        community.general.npm:
+          name: yarn
+          global: true
+          
     - block:
       - name: Verify if oh-my-zsh is installed
         command: test -d /home/{{ ansible_user_id }}/.oh-my-zsh
