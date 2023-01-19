@@ -129,8 +129,42 @@
           - naumovs.color-highlight
           - aaron-bond.better-comments
           
-# OPTIONAL
+    - block:
+      - name: Add JDK 11
+        become: true
+        apt_repository:
+          repo: 'ppa:openjdk-r/ppa'
+      - name: Install JDK 11
+        become: true
+        apt:
+          name: openjdk-11-jdk
+          state: present
+      - name: Configure Java/Android env variables
+        lineinfile:
+          path: /home/{{ ansible_user_id }}/.zshrc
+          insertafter: "export PATH=" 
+          line: "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64\nexport ANDROID_HOME=~/Android/Sdk\nexport PATH=$PATH:$ANDROID_HOME/emulator\nexport PATH=$PATH:$ANDROID_HOME/tools\nexport PATH=$PATH:$ANDROID_HOME/tools/bin\nexport PATH=$PATH:$ANDROID_HOME/platform-tools"
+          firstmatch: yes
+          state: present  
 
+    - block:
+      - name: Add Android Studio
+        become: true
+        apt_repository:
+          repo: 'ppa:maarten-fonville/android-studio'
+      - name: Install Android Studio
+        become: true
+        apt:
+          name: android-studio
+          state: present
+      - name: Configure Android Studio env variable
+        lineinfile:
+          path: /home/{{ ansible_user_id }}/.zshrc
+          insertafter: "export PATH=" 
+          line: "export PATH=$PATH:~/android-studio/bin"
+          firstmatch: yes
+          state: present        
+          
     - block:
       - name: Add Peek Repository
         become: true
