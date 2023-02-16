@@ -9,7 +9,6 @@
         state: present
       loop:
        - node
-       - flameshot
        - yarn
        - homebrew/cask/google-chrome
        - homebrew/cask/visual-studio-code
@@ -33,3 +32,13 @@
           path: /Users/{{ ansible_user_id }}/.zshrc
           regexp: '^ZSH_THEME='
           line: 'ZSH_THEME="powerlevel10k/powerlevel10k"'
+    
+    - name: Install Personal Apps
+      homebrew:
+        name: '{{ item }}'
+        state: present
+      loop:
+       - homebrew/cask/telegram
+       - homebrew/cask/spotify
+       - homebrew/cask/obs
+       - flameshot
