@@ -13,3 +13,23 @@
        - yarn
        - homebrew/cask/google-chrome
        - homebrew/cask/visual-studio-code
+    
+    - block:
+      - name: Verify if oh-my-zsh is installed
+        command: test -d /Users/{{ ansible_user_id }}/.oh-my-zsh
+        register: ohmyzsh
+        ignore_errors: true
+      - name: Install oh-my-zsh
+        shell: 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
+        when: ohmyzsh.rc != 0
+      - name: Add zsh theme - powerlevel10k
+        git:
+          repo: https://github.com/romkatv/powerlevel10k.git
+          dest: /Users/{{ ansible_user_id }}/.oh-my-zsh/custom/themes/powerlevel10k
+          clone: yes
+          update: yes
+      - name: Changing default zsh theme to powerlevel10k
+        lineinfile:
+          path: /Users/{{ ansible_user_id }}/.zshrc
+          regexp: '^ZSH_THEME='
+          line: 'ZSH_THEME="powerlevel10k/powerlevel10k"'
