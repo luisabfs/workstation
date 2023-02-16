@@ -2,7 +2,7 @@
 Ansible playbook to ✨automagically✨ install my workstation tools.
 
 >_Disclaimer:_  
-These scripts are MacOS M1/Ubuntu related with major version 18+, for other distributions you'll need to adapt it.<br/>
+These scripts are MacOS M1/Ubuntu related with major version 18+, for other distributions you'll need to adapt it.
 Read the correspondent `.yaml` file before applying and be sure to understand everything that will be done.
 
 
