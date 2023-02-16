@@ -1,0 +1,15 @@
+---
+- name: Preparing Workstation
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Install Common Packages
+      homebrew:
+        name: '{{ item }}'
+        state: present
+      loop:
+       - node
+       - flameshot
+       - yarn
+       - homebrew/cask/google-chrome
+       - homebrew/cask/visual-studio-code
