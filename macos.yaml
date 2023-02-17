@@ -47,8 +47,8 @@
           - aaron-bond.better-comments 
           - rocketseat.RocketseatReactJS
           - rocketseat.RocketseatReactNative
-	        - editorconfig.editorconfig
-	        - dbaeumer.vscode-eslint
+	  - editorconfig.editorconfig
+	  - dbaeumer.vscode-eslint
     
     - name: Install Personal Apps
       homebrew:
