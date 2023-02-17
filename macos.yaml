@@ -32,6 +32,23 @@
           path: /Users/{{ ansible_user_id }}/.zshrc
           regexp: '^ZSH_THEME='
           line: 'ZSH_THEME="powerlevel10k/powerlevel10k"'
+          
+    - block:
+      - name: Install VSCode Extensions
+        shell:
+          cmd: code --install-extension '{{ item }}' 
+        loop: 
+          - alexandernanberg.horizon-theme-vscode
+          - PKief.material-icon-theme
+          - waderyan.gitblame
+          - styled-components.vscode-styled-components
+          - formulahendry.auto-complete-tag
+          - naumovs.color-highlight
+          - aaron-bond.better-comments 
+          - rocketseat.RocketseatReactJS
+          - rocketseat.RocketseatReactNative
+	        - editorconfig.editorconfig
+	        - dbaeumer.vscode-eslint
     
     - name: Install Personal Apps
       homebrew:
